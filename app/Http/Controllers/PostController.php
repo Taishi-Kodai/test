@@ -11,12 +11,21 @@ class PostController extends Controller
    {
        return view('index')->with(['posts'=> $post->getPaginateBylimit()]);
    }
+   
    public function show(Post $post)
    {
        return view('show')->with(['post' => $post]);
    }
+   
    public function create()
    {
        return view('create');
+   }
+   
+   public function store(Post $post, Request $request)
+   {
+       $input = $request['post'];
+       $post->fill($input)->save();
+       return redirect('/posts/' . $post->id);
    }
 }
