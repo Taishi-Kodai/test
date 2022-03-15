@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -32,4 +35,5 @@
          <div class='back'>[<a href='/'>back</a>]</div>
     </body>
 </html>
+@endsection
 
